@@ -9,7 +9,7 @@
 
 > Ubuntu (WSL) based setup
 
-### Install
+### Requirements
 
 ```bash
 #==========================#
@@ -43,9 +43,9 @@ pip install pynvim
 ```
 
 ```bash
-#============#
-# Neovim LSP #
-#============#
+#=========================#
+# Neovim LSP requirements #
+#=========================#
 
 # Python
 npm install -g pyright
@@ -58,7 +58,7 @@ npm install -g bash-language-server
 curl -fsSL https://deno.land/install.sh | sh
 
 # Rust
-# Install rustup first
+# https://rustup.rs/
 rustup component add rust-analyzer
 
 # C/C++
