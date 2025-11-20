@@ -1,0 +1,18 @@
+export PATH="$PATH:$HOME/.local/bin"
+
+export HISTCONTROL=ignoreboth
+export HISTSIZE=2000
+export HISTFILESIZE=2000
+
+HISTORY="history -n"
+HISTORY="$HISTORY; history -w"
+HISTORY="$HISTORY; history -c"
+HISTORY="$HISTORY; history -r"
+
+export PROMPT_COMMAND="$HISTORY; $PROMPT_COMMAND"
+unset HISTORY
+
+export INPUTRC="$HOME/.config/.inputrc"
+
+export EDITOR=nvim
+export VISUAL=nvim
