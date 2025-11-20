@@ -10,18 +10,6 @@ shopt -s autocd
 shopt -s cmdhist
 
 #=================================#
-SRCS=(
-    "$HOME/.bash_env"
-    "$HOME/.bash_aliases"
-    "$HOME/.local/share/pyenv/bin/activate"
-)
-for src in "${SRCS[@]}"
-do 
-    [[ -s "$src" ]] && . "$src"
-done
-unset SRCS src
-
-#=================================#
 if ! shopt -oq posix
 then
     BASH_COMPLETION=(
@@ -36,6 +24,22 @@ then
     done
     unset BASH_COMPLETION bash_completion
 fi
+
+#=================================#
+SRCS=(
+    "$HOME/.bash_env"
+    "$HOME/.bash_aliases"
+    "$HOME/.local/share/pyenv/bin/activate"
+    "$HOME/.nvm/nvm.sh"
+    "$HOME/.nvm/bash_completion"
+    "$HOME/.deno/env"
+    "$HOME/.cargo/env"
+)
+for src in "${SRCS[@]}"
+do
+    [[ -s "$src" ]] && . "$src"
+done
+unset SRCS src
 
 #=================================#
 [[ -z "$NO_WELCOME" ]] && . "$HOME/.bash_welcome"

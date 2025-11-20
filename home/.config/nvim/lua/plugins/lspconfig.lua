@@ -21,12 +21,11 @@ return {
         vim.lsp.config.pyright = require("lsp.python.pyright")
         vim.lsp.config.ruff = require("lsp.python.ruff")
         vim.lsp.config.denols = require("lsp.javascript")
-        vim.lsp.config.marksman = require("lsp.markdown")
         vim.lsp.config.dockerls = require("lsp.docker")
 
         local servers = {
             "lua_ls", "bashls", "rust_analyzer", "ccls",
-            "pyright", "ruff", "denols", "marksman", "dockerls"
+            "pyright", "ruff", "denols", "dockerls"
         }
         for _, lsp in ipairs(servers) do vim.lsp.enable(lsp) end
     end

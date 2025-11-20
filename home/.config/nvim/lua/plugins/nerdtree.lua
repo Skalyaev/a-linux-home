@@ -13,6 +13,5 @@ return {
         vim.g.NERDTreeBookmarksFile = "/dev/null"
 
         vim.keymap.set("n", "²", ":NERDTreeToggle<CR>")
-        vim.keymap.set("n", "~", ":NERDTreeFocus<CR>")
     end
 }

@@ -1,4 +1,5 @@
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/src/lls/bin"
 
 export HISTCONTROL=ignoreboth
 export HISTSIZE=2000
