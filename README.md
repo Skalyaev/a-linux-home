@@ -38,7 +38,7 @@ npm install -g neovim
 npm install -g tree-sitter-cli
 
 python3 -m venv ~/.local/share/pyenv
-source ~/.local/share/pyenv/bin/activate
+. ~/.local/share/pyenv/bin/activate
 pip install pynvim
 ```
 
