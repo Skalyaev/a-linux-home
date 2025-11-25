@@ -16,8 +16,11 @@
 # Bash config requirements #
 #==========================#
 
-sudo apt install -y figlet
 sudo apt install -y lolcat
+sudo apt install -y figlet
+
+sudo rm -r /usr/share/figlet
+sudo cp -r usr/share/figlet /usr/share
 ```
 
 ```bash
