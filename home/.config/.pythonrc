@@ -1,0 +1,16 @@
+from os import makedirs, environ
+from os.path import expanduser, dirname, exists
+
+from readline import read_history_file, write_history_file
+from atexit import register
+
+default_history_file = "~/.history/.python_history"
+history = environ.get("PYTHONHISTFILE", expanduser(default_history_file))
+
+makedirs(dirname(history), exist_ok=True)
+
+if not exists(history):
+    open(history, "a").close()
+
+read_history_file(history)
+register(write_history_file, history)

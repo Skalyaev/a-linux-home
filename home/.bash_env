@@ -1,9 +1,29 @@
+export EDITOR=nvim
+export VISUAL=nvim
+
+export PYTHONSTARTUP="$HOME/.config/.pythonrc"
+export GIT_CONFIG_GLOBAL="$HOME/.config/.gitconfig"
+
+export NODE_REPL_HISTORY="$HOME/.history/.node_repl_history"
+export LESSHISTFILE="$HOME/.history/.lesshst"
+
+export NVM_DIR="$HOME/.local/share/nvm"
+export CARGO_HOME="$HOME/.local/share/cargo"
+export RUSTUP_HOME="$HOME/.local/share/rustup"
+export DENO_DIR="$HOME/.local/share/deno"
+
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/src/lls/bin"
+export PATH="$PATH:$NVM_DIR"
+export PATH="$PATH:$HOME/$CARGO_HOME/bin"
+export PATH="$PATH:$HOME/$DENO_DIR/bin"
+
+export INPUTRC="$HOME/.config/.inputrc"
 
 export HISTCONTROL=ignoreboth
 export HISTSIZE=2000
 export HISTFILESIZE=2000
+export HISTFILE="$HOME/.history/.bash_history"
 
 HISTORY="history -n"
 HISTORY="$HISTORY; history -w"
@@ -12,8 +32,3 @@ HISTORY="$HISTORY; history -r"
 
 export PROMPT_COMMAND="$HISTORY; $PROMPT_COMMAND"
 unset HISTORY
-
-export INPUTRC="$HOME/.config/.inputrc"
-
-export EDITOR=nvim
-export VISUAL=nvim

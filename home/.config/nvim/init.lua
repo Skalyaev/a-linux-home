@@ -18,8 +18,8 @@ vim.g.loaded_perl_provider = 0
 
 vim.g.python3_host_prog = "~/.local/share/pyenv/bin/python"
 
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.opt.number = true
 

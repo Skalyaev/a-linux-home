@@ -26,14 +26,14 @@ then
 fi
 
 #=================================#
+. "$HOME/.bash_env"
 SRCS=(
-    "$HOME/.bash_env"
     "$HOME/.bash_aliases"
     "$HOME/.local/share/pyenv/bin/activate"
-    "$HOME/.nvm/nvm.sh"
-    "$HOME/.nvm/bash_completion"
-    "$HOME/.deno/env"
-    "$HOME/.cargo/env"
+    "$NVM_DIR/nvm.sh"
+    "$NVM_DIR/bash_completion"
+    "$CARGO_HOME/env"
+    "$DENO_DIR/env"
 )
 for src in "${SRCS[@]}"
 do

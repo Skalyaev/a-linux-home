@@ -1,12 +1,5 @@
 ![](preview.jpg)
 
-### Content
-
-- [x] Bash settings
-- [x] Readline settings
-- [x] Neovim settings
-- [x] Git settings
-
 > Ubuntu (WSL) based setup
 
 ### Requirements
@@ -49,6 +42,7 @@ pip install pynvim
 #=========================#
 # Neovim LSP requirements #
 #=========================#
+mkdir -p ~/.local/share
 
 # Python
 npm install -g pyright
@@ -58,10 +52,14 @@ pip install ruff-lsp
 npm install -g bash-language-server
 
 # JS/TS
+#
+# mv ~/.deno ~/.local/share/deno
 curl -fsSL https://deno.land/install.sh | sh
 
 # Rust
+#
 # https://rustup.rs/
+# mv ~/.cargo ~/.rustup ~/.local/share/.
 rustup component add rust-analyzer
 
 # C/C++
@@ -72,4 +70,36 @@ npm install -g dockerfile-language-server-nodejs
 
 # Lua
 # https://luals.github.io/wiki/build/
+```
+
+### Install
+
+```bash
+git clone https://github.com/Skalyaev/a-linux-home.git
+cd a-linux-home && make
+```
+
+### Post Install
+
+```bash
+# Python history file
+#
+# On the first use of the python CLI,
+# the `.python_history` file is created
+# both in `$HOME/` and in `$HOME/.history/`.
+# On subsequent runs, the `.python_history` file
+# is created only in $HOME/.history/.
+# I don’t understand why.
+#
+python
+exit()
+
+rm ~/.python_history
+cat ~/.history/.python_history
+```
+
+```bash
+# npm cache
+npm config set cache $HOME/.cache/npm --global
+mv ~/.npm $HOME/.cache/npm
 ```

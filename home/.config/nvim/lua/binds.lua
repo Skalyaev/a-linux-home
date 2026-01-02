@@ -35,3 +35,5 @@ vim.keymap.set("n", "<M-D>", "<C-w>L")
 
 vim.keymap.set("n", "<leader>i", ":Inspect<CR>")
 vim.keymap.set("n", "<leader>,", '/[^\\d0-\\d127]<CR>')
+
+vim.keymap.set("n", "<leader>*", ":e#<CR>")
