@@ -99,7 +99,7 @@ cat ~/.history/.python_history
 ```
 
 ```bash
-# npm cache
+# NPM cache
 npm config set cache $HOME/.cache/npm --global
 mv ~/.npm $HOME/.cache/npm
 ```
