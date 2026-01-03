@@ -10,19 +10,16 @@ export LESSHISTFILE="$HOME/.history/.lesshst"
 export NVM_DIR="$HOME/.local/share/nvm"
 export CARGO_HOME="$HOME/.local/share/cargo"
 export RUSTUP_HOME="$HOME/.local/share/rustup"
-export DENO_DIR="$HOME/.local/share/deno"
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/src/lls/bin"
 export PATH="$PATH:$NVM_DIR"
-export PATH="$PATH:$HOME/$CARGO_HOME/bin"
-export PATH="$PATH:$HOME/$DENO_DIR/bin"
+export PATH="$PATH:$CARGO_HOME/bin"
+export PATH="$PATH:$DENO_DIR/bin"
 
 export INPUTRC="$HOME/.config/.inputrc"
 
 export HISTCONTROL=ignoreboth
-export HISTSIZE=2000
-export HISTFILESIZE=2000
 export HISTFILE="$HOME/.history/.bash_history"
 
 HISTORY="history -n"

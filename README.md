@@ -52,9 +52,7 @@ pip install ruff-lsp
 npm install -g bash-language-server
 
 # JS/TS
-#
-# mv ~/.deno ~/.local/share/deno
-curl -fsSL https://deno.land/install.sh | sh
+npm install -g typescript typescript-language-server
 
 # Rust
 #
@@ -86,10 +84,8 @@ cd a-linux-home && make
 #
 # On the first use of the python CLI,
 # the `.python_history` file is created
-# both in `$HOME/` and in `$HOME/.history/`.
-# On subsequent runs, the `.python_history` file
-# is created only in $HOME/.history/.
-# I don’t understand why.
+# both in `~/` and `~/.history/`.
+# On subsequent runs, only ~/.history is used.
 #
 python
 exit()
@@ -100,6 +96,6 @@ cat ~/.history/.python_history
 
 ```bash
 # NPM cache
-npm config set cache $HOME/.cache/npm --global
-mv ~/.npm $HOME/.cache/npm
+npm config set cache ~/.cache/npm --global
+mv ~/.npm ~/.cache/npm
 ```

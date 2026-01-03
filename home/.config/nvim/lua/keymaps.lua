@@ -1,4 +1,4 @@
-vim.keymap.set("v", "<C-c>", "\"+y")
+vim.keymap.set("v", "<C-c>", '"+y')
 
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>W", ":wa<CR>")
@@ -9,7 +9,7 @@ vim.keymap.set("n", "<leader>s", ":%s/")
 vim.keymap.set("n", "<M-t>", ":tabnew<CR>")
 vim.keymap.set("n", "<M-&>", "1gt")
 vim.keymap.set("n", "<M-é>", "2gt")
-vim.keymap.set("n", "<M-\">", "3gt")
+vim.keymap.set("n", '<M-">', "3gt")
 vim.keymap.set("n", "<M-'>", "4gt")
 vim.keymap.set("n", "<M-(>", "5gt")
 vim.keymap.set("n", "<M-->", "6gt")
@@ -32,8 +32,12 @@ vim.keymap.set("n", "<M-q>", "<C-w>h")
 vim.keymap.set("n", "<M-Q>", "<C-w>H")
 vim.keymap.set("n", "<M-d>", "<C-w>l")
 vim.keymap.set("n", "<M-D>", "<C-w>L")
-
-vim.keymap.set("n", "<leader>i", ":Inspect<CR>")
-vim.keymap.set("n", "<leader>,", '/[^\\d0-\\d127]<CR>')
+vim.keymap.set("n", "<M-f>", ":only<CR>")
 
 vim.keymap.set("n", "<leader>*", ":e#<CR>")
+
+vim.keymap.set("n", "<leader>n", ":lua vim.diagnostic.goto_next()<CR>")
+vim.keymap.set("n", "<leader>d", ":lua vim.lsp.buf.definition()<CR>")
+
+vim.keymap.set("n", "<leader>i", ":Inspect<CR>")
+vim.keymap.set("n", "<leader>,", "/[^\\d0-\\d127]<CR>")

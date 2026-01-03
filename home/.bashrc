@@ -10,34 +10,31 @@ shopt -s autocd
 shopt -s cmdhist
 
 #=================================#
-if ! shopt -oq posix
-then
-    BASH_COMPLETION=(
-        /usr/share/bash-completion/bash_completion
-        /etc/bash_completion
-    )
-    for bash_completion in "${BASH_COMPLETION[@]}"
-    do
-        [[ ! -e "$bash_completion" ]] && continue
-        . "$bash_completion"
-        break
-    done
-    unset BASH_COMPLETION bash_completion
+if ! shopt -oq posix; then
+  BASH_COMPLETION=(
+    /usr/share/bash-completion/bash_completion
+    /etc/bash_completion
+  )
+  for bash_completion in "${BASH_COMPLETION[@]}"; do
+    [[ ! -e "$bash_completion" ]] && continue
+    . "$bash_completion"
+    break
+  done
+  unset BASH_COMPLETION bash_completion
 fi
 
 #=================================#
 . "$HOME/.bash_env"
+
 SRCS=(
-    "$HOME/.bash_aliases"
-    "$HOME/.local/share/pyenv/bin/activate"
-    "$NVM_DIR/nvm.sh"
-    "$NVM_DIR/bash_completion"
-    "$CARGO_HOME/env"
-    "$DENO_DIR/env"
+  "$HOME/.bash_aliases"
+  "$HOME/.local/share/pyenv/bin/activate"
+  "$NVM_DIR/nvm.sh"
+  "$NVM_DIR/bash_completion"
+  "$CARGO_HOME/env"
 )
-for src in "${SRCS[@]}"
-do
-    [[ -s "$src" ]] && . "$src"
+for src in "${SRCS[@]}"; do
+  [[ -s "$src" ]] && . "$src"
 done
 unset SRCS src
 

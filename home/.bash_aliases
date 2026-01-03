@@ -17,20 +17,19 @@ alias fdp='find . -type d -perm'
 alias ffp='find . -type f -perm'
 alias flp='find . -type l -perm'
 
-if [[ -x /usr/bin/dircolors ]]
-then
-    alias ls='ls --color=auto'
-    alias l='ls --color=auto'
-    alias ll='ls -l --color=auto'
-    alias la='ls -A --color=auto'
-    alias lla='ls -lA --color=auto'
-    alias lF='ls -F --color=auto'
+if [[ -x /usr/bin/dircolors ]]; then
+  alias ls='ls --color=auto'
+  alias l='ls --color=auto'
+  alias ll='ls -l --color=auto'
+  alias la='ls -A --color=auto'
+  alias lla='ls -lA --color=auto'
+  alias lF='ls -F --color=auto'
 else
-    alias l='ls'
-    alias ll='ls -l'
-    alias la='ls -A'
-    alias lla='ls -lA'
-    alias lF='ls -F'
+  alias l='ls'
+  alias ll='ls -l'
+  alias la='ls -A'
+  alias lla='ls -lA'
+  alias lF='ls -F'
 fi
 alias mk='mkdir -p'
 alias r='rm'
@@ -45,32 +44,31 @@ alias rrf='rm -rf'
 alias s='sed'
 alias si='sed -i'
 
-if [[ -x /usr/bin/dircolors ]]
-then
-    alias grep='grep --color=auto'
-    alias g='grep --color=auto'
-    alias gv='grep -v --color=auto'
-    alias gi='grep -i --color=auto'
-    alias gvi='grep -vi --color=auto'
+if [[ -x /usr/bin/dircolors ]]; then
+  alias grep='grep --color=auto'
+  alias g='grep --color=auto'
+  alias gv='grep -v --color=auto'
+  alias gi='grep -i --color=auto'
+  alias gvi='grep -vi --color=auto'
 else
-    alias g='grep'
-    alias gv='grep -v'
-    alias gi='grep -i'
-    alias gvi='grep -vi'
+  alias g='grep'
+  alias gv='grep -v'
+  alias gi='grep -i'
+  alias gvi='grep -vi'
 fi
 
 #=====#
 # GIT #
 #=====#
 
-gitx () {
-    local msg="$1"
+gitx() {
+  local msg="$1"
 
-    set -e
-    git add -A
-    git commit -m "$msg"
-    git push
-    set +e
+  set -e
+  git add -A
+  git commit -m "$msg"
+  git push
+  set +e
 }
 alias gits='git status'
 alias gita='git add'

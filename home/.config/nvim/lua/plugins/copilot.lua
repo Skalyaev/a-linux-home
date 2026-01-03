@@ -1,12 +1,12 @@
 return {
+	"github/copilot.vim",
 
-    "github/copilot.vim",
-    lazy = true,
-    event = "BufEnter",
-    config = function()
+	lazy = true,
+	event = "BufEnter",
 
-        vim.keymap.set("i", "<M-Down>", "<Plug>(copilot-next)")
-        vim.keymap.set("i", "<M-Up>", "<Plug>(copilot-previous)")
-        vim.keymap.set("i", "<M-Left>", "<Plug>(copilot-dismiss)")
-    end
+	config = function()
+		vim.keymap.set("i", "<M-Down>", "<Plug>(copilot-next)")
+		vim.keymap.set("i", "<M-Up>", "<Plug>(copilot-previous)")
+		vim.keymap.set("i", "<M-Left>", "<Plug>(copilot-dismiss)")
+	end,
 }

@@ -1,24 +1,26 @@
+local bash_files = {
+	[".bash_env"] = "bash",
+	[".bash_welcome"] = "bash",
+}
+
 return {
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
 
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    lazy = true,
-    event = "BufEnter",
-    config = function ()
+	lazy = true,
+	event = "BufEnter",
 
-        vim.cmd([[TSUpdate]])
-        local settings = {
+	init = function()
+		vim.filetype.add({ filename = bash_files })
+	end,
 
-            highlight = { enable = true },
-            indent = { enable = true },
-            auto_install = true
-        }
-        require("nvim-treesitter.configs").setup(settings)
-        local filename = {
+	config = function()
+		vim.cmd([[TSUpdate]])
 
-            ['.bash_env'] = 'bash',
-            ['.bash_welcome' ] = 'bash'
-        }
-        vim.filetype.add({ filename = filename })
-    end
+		require("nvim-treesitter.configs").setup({
+			highlight = { enable = true },
+			indent = { enable = true },
+			auto_install = true,
+		})
+	end,
 }

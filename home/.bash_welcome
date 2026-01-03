@@ -8,10 +8,8 @@ then
     FONT=$(printf "%s\n" "${FONTS[@]}" | shuf -n1)
 
     if which lolcat &>/dev/null
-    then
-        figlet -f "$FONT" -w "$(tput cols)" "${USER^^}" | lolcat
-    else
-        figlet -f "$FONT" -w "$(tput cols)" "${USER^^}"
+    then figlet -f "$FONT" -w "$(tput cols)" "${USER^^}" | lolcat
+    else figlet -f "$FONT" -w "$(tput cols)" "${USER^^}"
     fi
     unset FILES FONTS FONT
 fi

@@ -1,7 +1,10 @@
 return {
+	"Skalyaev/a-nvim-theme",
+	priority = 42,
 
-    "Skalyaev/a-nvim-theme",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    priority = 42,
-    config = function() vim.cmd([[colorscheme neon]]) end
+	dependencies = { "nvim-treesitter/nvim-treesitter" },
+
+	config = function()
+		vim.cmd([[colorscheme neon]])
+	end,
 }
