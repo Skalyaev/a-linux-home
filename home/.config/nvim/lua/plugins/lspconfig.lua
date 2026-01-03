@@ -8,6 +8,7 @@ local servers = {
 	dockerls = "lsp.docker",
 	ts_ls = "lsp.typescript",
 }
+
 return {
 	"neovim/nvim-lspconfig",
 
