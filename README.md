@@ -53,6 +53,7 @@ npm install -g bash-language-server
 
 # JS/TS
 npm install -g typescript typescript-language-server
+npm install -g vscode-langservers-extracted
 
 # Rust
 #

@@ -7,6 +7,7 @@ local servers = {
 	ruff = "lsp.python.ruff",
 	dockerls = "lsp.docker",
 	ts_ls = "lsp.typescript",
+	eslint = "lsp.eslint",
 }
 
 return {

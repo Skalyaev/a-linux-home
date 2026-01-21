@@ -37,7 +37,7 @@ vim.keymap.set("n", "<M-f>", ":only<CR>")
 vim.keymap.set("n", "<leader>*", ":e#<CR>")
 
 vim.keymap.set("n", "<leader>n", ":lua vim.diagnostic.goto_next()<CR>")
-vim.keymap.set("n", "<leader>d", ":lua vim.lsp.buf.definition()<CR>")
+vim.keymap.set("n", "<leader>d", ":lua vim.lsp.buf.hover()<CR>")
 
 vim.keymap.set("n", "<leader>i", ":Inspect<CR>")
 vim.keymap.set("n", "<leader>,", "/[^\\d0-\\d127]<CR>")
