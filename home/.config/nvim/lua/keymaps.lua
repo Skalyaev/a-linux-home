@@ -1,10 +1,13 @@
+vim.keymap.set("n", "!", "/")
 vim.keymap.set("v", "<C-c>", '"+y')
+vim.keymap.set("n", "W", "viw")
 
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>W", ":wa<CR>")
 vim.keymap.set("n", "<leader>q", ":q<CR>")
 vim.keymap.set("n", "<leader>Q", ":qa<CR>")
 vim.keymap.set("n", "<leader>s", ":%s/")
+vim.keymap.set("n", "<leader>S", ":%s")
 
 vim.keymap.set("n", "<M-t>", ":tabnew<CR>")
 vim.keymap.set("n", "<M-&>", "1gt")
@@ -38,6 +41,7 @@ vim.keymap.set("n", "<leader>*", ":e#<CR>")
 
 vim.keymap.set("n", "<leader>n", ":lua vim.diagnostic.goto_next()<CR>")
 vim.keymap.set("n", "<leader>d", ":lua vim.lsp.buf.hover()<CR>")
+vim.keymap.set("n", "<leader>a", ":lua vim.lsp.buf.definition()<CR>")
 
 vim.keymap.set("n", "<leader>i", ":Inspect<CR>")
 vim.keymap.set("n", "<leader>,", "/[^\\d0-\\d127]<CR>")

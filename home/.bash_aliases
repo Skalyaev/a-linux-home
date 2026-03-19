@@ -64,11 +64,9 @@ fi
 gitx() {
   local msg="$1"
 
-  set -e
   git add -A
   git commit -m "$msg"
   git push
-  set +e
 }
 alias gits='git status'
 alias gita='git add'
