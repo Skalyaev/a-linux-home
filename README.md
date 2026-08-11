@@ -1,4 +1,2 @@
-
-
-> Ubuntu (WSL) based setup
+![](preview.jpg)
 
