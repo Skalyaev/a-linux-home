@@ -1,6 +1,0 @@
-require("globals")
-require("options")
-require("lazyload")
-require("keymaps")
-require("events")
-require("ui")

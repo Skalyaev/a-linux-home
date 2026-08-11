@@ -1,8 +1,8 @@
-FIGLET_FONTS=/usr/share/figlet
+FIGLET_FONTS=~/.local/share/figlet
 
 if [[ -e "$FIGLET_FONTS" ]]
 then
-    FILES=$(find "$FIGLET_FONTS" -maxdepth 1 -name "*.flf")
+    FILES=$(find -L "$FIGLET_FONTS" -maxdepth 1 -name "*.flf")
     mapfile -t FONTS <<< "$FILES"
 
     FONT=$(printf "%s\n" "${FONTS[@]}" | shuf -n1)

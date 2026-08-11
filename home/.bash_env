@@ -6,7 +6,7 @@ export PYTHONSTARTUP="$HOME/.config/.pythonrc"
 export GIT_CONFIG_GLOBAL="$HOME/.config/.gitconfig"
 
 export HISTCONTROL=ignoredups:erasedups
-export PROMPT_COMMAND="history -a; history -n; history -r"
+export PROMPT_COMMAND="history -a; history -n"
 
 export HISTFILE="$HOME/.history/.bash_history"
 export LESSHISTFILE="$HOME/.history/.lesshst"
@@ -21,4 +21,3 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/src/lls/bin"
 export PATH="$PATH:$NVM_DIR"
 export PATH="$PATH:$CARGO_HOME/bin"
-export PATH="$PATH:$DENO_DIR/bin"

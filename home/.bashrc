@@ -24,14 +24,11 @@ if ! shopt -oq posix; then
 fi
 
 #=================================#
-. "$HOME/.bash_env"
-
 SRCS=(
   "$HOME/.bash_aliases"
   "$HOME/.local/share/pyenv/bin/activate"
   "$NVM_DIR/nvm.sh"
   "$NVM_DIR/bash_completion"
-  "$CARGO_HOME/env"
 )
 for src in "${SRCS[@]}"; do
   [[ -s "$src" ]] && . "$src"
