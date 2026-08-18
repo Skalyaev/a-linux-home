@@ -28,7 +28,7 @@ NEOVIM_REPO=git@github.com:Skalyaev/a-terminal-based-ide.git
 all: apt shared bash readline git python node neovim
 
 apt:
-	sudo apt update &>/dev/null
+	sudo apt update
 	sudo apt install -y lolcat
 	sudo apt install -y figlet
 	sudo apt install -y nodejs
@@ -69,8 +69,8 @@ neovim:
 		$(MAKE) remove-neovim; \
 	fi
 	mkdir -p $(DST)/.local/src
-	git clone $(NEOVIM_REPO) $(DST)/.local/src/neovim &>/dev/null
-	cd $(DST)/.local/src/neovim && make &>/dev/null
+	git clone $(NEOVIM_REPO) $(DST)/.local/src/neovim
+	cd $(DST)/.local/src/neovim && make
 
 remove: remove-apt \
 	remove-shared \
@@ -82,8 +82,8 @@ remove: remove-apt \
 	remove-neovim
 
 remove-apt:
-	sudo apt update &>/dev/null
-	sudo apt remove -y lolcat figlet &>/dev/null
+	sudo apt update
+	sudo apt remove -y lolcat figlet
 
 remove-shared:
 	rm -rf $(DST)/.local/share/figlet
@@ -107,7 +107,7 @@ remove-python:
 	rm -rf $(DST)/.python_history
 
 remove-neovim:
-	cd $(DST)/.local/src/neovim && make uninstall &>/dev/null
+	cd $(DST)/.local/src/neovim && make uninstall
 	rm -rf $(DST)/.local/src/neovim
 	echo -e "\r[$(GREEN) OK $(RST)] Neovim config removed"
 
