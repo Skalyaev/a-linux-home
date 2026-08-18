@@ -28,11 +28,9 @@ NEOVIM_REPO=git@github.com:Skalyaev/a-terminal-based-ide.git
 all: apt shared bash readline git python node neovim
 
 apt:
-	sudo apt update
-	sudo apt install -y lolcat
-	sudo apt install -y figlet
-	sudo apt install -y nodejs
-	sudo apt install -y npm
+	sudo apt update && \
+	DEBIAN_FRONTEND=noninteractive \
+		sudo apt install -y lolcat figlet nodejs npm
 
 shared:
 	mkdir -p $(DST)/.local/share
