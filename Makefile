@@ -3,7 +3,7 @@ SHELL:=/bin/bash
 SRC=$(PWD)/home
 DST=$(HOME)
 
-NEOVIM_REPO=git@github.com:Skalyaev/a-terminal-based-ide.git
+NEOVIM_REPO=https://github.com/Skalyaev/a-terminal-based-ide.git
 
 .PHONY: all apt shared bash readline git python node neovim \
 	remove \
