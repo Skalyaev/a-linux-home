@@ -17,8 +17,7 @@ alias fdp='find . -type d -perm'
 alias ffp='find . -type f -perm'
 alias flp='find . -type l -perm'
 
-if [[ -x /usr/bin/dircolors ]]
-then
+if [[ -x /usr/bin/dircolors ]]; then
   alias ls='ls --color=auto'
   alias l='ls --color=auto'
   alias ll='ls -l --color=auto'
@@ -45,8 +44,7 @@ alias rrf='rm -rf'
 alias s='sed'
 alias si='sed -i'
 
-if [[ -x /usr/bin/dircolors ]]
-then
+if [[ -x /usr/bin/dircolors ]]; then
   alias grep='grep --color=auto'
   alias g='grep --color=auto'
   alias gv='grep -v --color=auto'
@@ -90,3 +88,5 @@ alias xi='xargs -I {}'
 alias v='nvim'
 alias py='python3'
 alias pyc='python3 -c'
+
+alias c='claude'

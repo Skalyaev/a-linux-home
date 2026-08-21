@@ -49,8 +49,8 @@ python:
 	ln -sf $(SRC)/.config/.pythonrc $(DST)/.config/.pythonrc
 
 node:
-	npm config set cache ~/.cache/npm --global
-	mv ~/.npm ~/.cache/npm
+	mkdir -p $(DST)/.cache/npm
+	npm config set cache $(DST)/.cache/npm
 
 neovim:
 	rm -rf $(DST)/.local/src/neovim
