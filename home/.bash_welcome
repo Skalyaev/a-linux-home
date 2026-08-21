@@ -6,39 +6,43 @@ then
     mapfile -t FONTS <<< "$FILES"
 
     FONT=$(printf "%s\n" "${FONTS[@]}" | shuf -n1)
+    NAME="${USER:-$(id -un)}"
 
     if which lolcat &>/dev/null
-    then figlet -f "$FONT" -w "$(tput cols)" "${USER^^}" | lolcat
-    else figlet -f "$FONT" -w "$(tput cols)" "${USER^^}"
+    then figlet -f "$FONT" -w "$(tput cols)" "${NAME^^}" | lolcat
+    else figlet -f "$FONT" -w "$(tput cols)" "${NAME^^}"
     fi
-    unset FILES FONTS FONT
+    unset FILES FONTS FONT NAME
 fi
 unset FIGLET_FONTS
 
 #=================================#
-GREEN="\e[1;32m"
-RED="\e[1;31m"
-RST="\e[0m"
+if which systemctl &>/dev/null && which journalctl &>/dev/null
+then
+    GREEN="\e[1;32m"
+    RED="\e[1;31m"
+    RST="\e[0m"
 
-SYSTEMCTL_RET="$(systemctl --failed)"
-JOURNALCTL_RET="$(journalctl -p 3 -xb)"
+    SYSTEMCTL_RET="$(systemctl --failed)"
+    JOURNALCTL_RET="$(journalctl -p 3 -xb)"
 
-SERVICE_COUNT="$(grep -c failed <<<"$SYSTEMCTL_RET")"
-JOURNAL_COUNT="$(grep -c Error <<<"$JOURNALCTL_RET")"
+    SERVICE_COUNT="$(grep -c failed <<<"$SYSTEMCTL_RET")"
+    JOURNAL_COUNT="$(grep -c Error <<<"$JOURNALCTL_RET")"
 
-SERVICE_COLOR="$GREEN"
-JOURNAL_COLOR="$GREEN"
+    SERVICE_COLOR="$GREEN"
+    JOURNAL_COLOR="$GREEN"
 
-[[ "$SERVICE_COUNT" -gt 0 ]] && SERVICE_COLOR="$RED"
-[[ "$JOURNAL_COUNT" -gt 0 ]] && JOURNAL_COLOR="$RED"
+    [[ "$SERVICE_COUNT" -gt 0 ]] && SERVICE_COLOR="$RED"
+    [[ "$JOURNAL_COUNT" -gt 0 ]] && JOURNAL_COLOR="$RED"
 
-SERVICE_COUNT="$SERVICE_COLOR$SERVICE_COUNT$RST"
-JOURNAL_COUNT="$JOURNAL_COLOR$JOURNAL_COUNT$RST"
+    SERVICE_COUNT="$SERVICE_COLOR$SERVICE_COUNT$RST"
+    JOURNAL_COUNT="$JOURNAL_COLOR$JOURNAL_COUNT$RST"
 
-echo -ne "\nSystemctl errors: $SERVICE_COUNT"
-echo -e "\tJournalctl errors: $JOURNAL_COUNT\n"
+    echo -ne "\nSystemctl errors: $SERVICE_COUNT"
+    echo -e "\tJournalctl errors: $JOURNAL_COUNT\n"
 
-unset GREEN RED RST
-unset SYSTEMCTL_RET JOURNALCTL_RET
-unset SERVICE_COUNT JOURNAL_COUNT
-unset SERVICE_COLOR JOURNAL_COLOR
+    unset GREEN RED RST
+    unset SYSTEMCTL_RET JOURNALCTL_RET
+    unset SERVICE_COUNT JOURNAL_COUNT
+    unset SERVICE_COLOR JOURNAL_COLOR
+fi
