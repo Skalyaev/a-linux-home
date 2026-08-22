@@ -5,9 +5,8 @@ DST=$(HOME)
 
 NEOVIM_REPO=https://github.com/Skalyaev/a-terminal-based-ide.git
 
-.PHONY: all apt shared bash readline git python node neovim \
+.PHONY: all bash readline git python node neovim figlet \
 	remove \
-	remove-apt \
 	remove-figlet \
 	remove-bash \
 	remove-readline \
@@ -16,7 +15,6 @@ NEOVIM_REPO=https://github.com/Skalyaev/a-terminal-based-ide.git
 	remove-node \
 	remove-neovim \
 	re \
-	re-apt \
 	re-figlet \
 	re-bash \
 	re-readline \
@@ -100,8 +98,6 @@ remove-figlet:
 
 re: remove all
 
-re-apt: remove-apt apt
-
 re-bash: remove-bash bash
 
 re-readline: remove-readline readline
@@ -114,4 +110,4 @@ re-node: remove-node node
 
 re-neovim: remove-neovim neovim
 
-re-figlet: remove-figlet shared
+re-figlet: remove-figlet figlet
