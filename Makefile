@@ -3,6 +3,7 @@ SHELL:=/bin/bash
 SRC=$(PWD)/home
 DST=$(HOME)
 
+NEOVIM_NAME=a-terminal-based-ide
 NEOVIM_REPO=https://github.com/Skalyaev/a-terminal-based-ide.git
 
 .PHONY: all bash readline git python node neovim figlet \
@@ -53,8 +54,8 @@ node:
 neovim:
 	rm -rf $(DST)/.local/src/neovim
 	mkdir -p $(DST)/.local/src
-	git clone $(NEOVIM_REPO) $(DST)/.local/src/neovim
-	cd $(DST)/.local/src/neovim && make
+	git clone $(NEOVIM_REPO) $(DST)/.local/src/$(NEOVIM_NAME)
+	cd $(DST)/.local/src/$(NEOVIM_NAME) && make
 
 figlet:
 	mkdir -p $(DST)/.local/share
