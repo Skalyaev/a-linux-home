@@ -90,8 +90,9 @@ remove-python:
 	rm -rf $(DST)/.python_history
 
 remove-neovim:
-	cd $(DST)/.local/src/neovim && make uninstall
-	rm -rf $(DST)/.local/src/neovim
+	cd $(DST)/.local/src/$(NEOVIM_NAME) \
+		&& make uninstall
+	rm -rf $(DST)/.local/src/$(NEOVIM_NAME)
 
 remove-node:
 	rm -rf $(DST)/.cache/npm
