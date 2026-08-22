@@ -52,7 +52,7 @@ node:
 	npm config set cache $(DST)/.cache/npm
 
 neovim:
-	rm -rf $(DST)/.local/src/neovim
+	rm -rf $(DST)/.local/src/$(NEOVIM_NAME)
 	mkdir -p $(DST)/.local/src
 	git clone $(NEOVIM_REPO) $(DST)/.local/src/$(NEOVIM_NAME)
 	cd $(DST)/.local/src/$(NEOVIM_NAME) \
