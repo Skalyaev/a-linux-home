@@ -55,7 +55,9 @@ neovim:
 	rm -rf $(DST)/.local/src/neovim
 	mkdir -p $(DST)/.local/src
 	git clone $(NEOVIM_REPO) $(DST)/.local/src/$(NEOVIM_NAME)
-	cd $(DST)/.local/src/$(NEOVIM_NAME) && make
+	cd $(DST)/.local/src/$(NEOVIM_NAME) \
+		&& make requirements \
+		&& make
 
 figlet:
 	mkdir -p $(DST)/.local/share
